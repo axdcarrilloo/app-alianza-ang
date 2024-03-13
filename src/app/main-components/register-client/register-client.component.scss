@@ -1,23 +1,38 @@
+
 $colorFirstBlueLogo: #2091ca;
+$colorBackground: #b3cfdc;
 
-.btns {
-    padding: 10px;
-    cursor: pointer;
-}
+#formRegister {
+    width: 100%;
+    background-color: $colorBackground;
+    padding: 8px;
 
-#formRegistrar {
-    border: 4px solid $colorFirstBlueLogo;
-    width: 200px;
-    padding: 10px;
-    margin-left: 10px;
-    border-radius: 15px;
+    .divAling {
+        columns: 2;
 
-    .btnRegistrar {
+        label {
+            font-weight: bold;
+            color: black;
+        }
+
+        .form-control {
+            width: 150px;
+            margin-left: -35px;
+        }
+    }
+
+    .divRegister {
+        text-align: right;
+    }
+
+    .btnRegister {
         margin-top: 5px;
         background-color: $colorFirstBlueLogo;
         font-weight: bold;
+
     }
-    .btnRegistrar:hover {
+
+    .btnRegister:hover {
         transition: 0.9s;
         background-color: blue;
     }

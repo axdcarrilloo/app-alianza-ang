@@ -1,23 +1,37 @@
-<a class="navbar-brand" (click)="actionFalseHiddenFormRegisterClient()">
-    <img src="./../../../assets/icons/btn-new.png" class="btns">
-</a>
-<a class="navbar-brand" href="">
-    <img src="./../../../assets/icons/btn-export.png" class="btns">
-</a>
-<div [hidden]="formRegisterClientHidden">
-    <form id="formRegistrar" [formGroup]="clientForm" (ngSubmit)="register()">
-        <div class="mb-2">
-            <input type="text" formControlName="sharedKey" class="form-control" placeholder="Shared Key">
-        </div> 
-        <div class="mb-2">
-            <input type="text" formControlName="businessId" class="form-control" placeholder="Business Id">
+
+<form id="formRegister" [formGroup]="clientForm" (ngSubmit)="register()">
+    <div class="mb-2">
+        <div class="divAling">
+            <label for="inputBusinessId"> Name </label>
+            <input type="text" formControlName="businessId" class="form-control">
         </div>
-        <div class="mb-2">
-            <input type="email" formControlName="email" class="form-control" placeholder="Email">
-        </div> 
-        <div class="mb-2">
-            <input type="number" formControlName="phone" class="form-control" placeholder="Phone">
+    </div>
+    <div class="mb-2">
+        <div class="divAling">
+            <label for="inputPhone"> Phone </label>
+            <input type="number" id="inputPhone" formControlName="phone" class="form-control">
         </div>
-        <button type="submit" class="btn btnRegistrar"> Registrar </button>
-    </form>
-</div>
+    </div>
+    <div class="mb-2">
+        <div class="divAling">
+            <label for="inputEmail"> Email </label>
+            <input type="email" id="inputEmail" formControlName="email" class="form-control">
+        </div>
+    </div>
+    <div class="mb-2">
+        <div class="divAling">
+            <label for="inputStartDate"> Start Date </label>
+            <input type="date" id="inputStartDate" formControlName="startDate" class="form-control">
+        </div>
+    </div>
+    <div class="mb-2">
+        <div class="divAling">
+            <label for="inputEndDate"> End Date </label>
+            <input type="date" id="inputEndDate" formControlName="endDate" class="form-control">
+        </div>
+    </div>
+    <!-- El Shared Key se arma en el Back -->
+    <div class="divRegister">
+        <button type="submit" class="btn btnRegister"> Ok </button>
+    </div>
+</form>

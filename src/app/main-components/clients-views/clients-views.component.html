@@ -1,3 +1,54 @@
-<h1>
-    <marquee>Aqui van los clientes..!</marquee>
-</h1>
+<div class="container-fluid">
+    <div class="divFormColunm">
+        <div>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="text" placeholder="Enter Shared Key"
+                    [(ngModel)]="sharedKeySearch" [ngModelOptions]="{standalone: true}">
+                <button class="btn-search" type="button" (click)="searchSharedKey()">Search</button>
+            </form>
+        </div>
+
+        <div class="divAdvancedSearch">
+            <button class="btnAdvancedSearch" (click)="actionActivateHiddenFormAdvancedSearch()"> Advanced Search
+            </button>
+
+            <div class="divHiddenFormAdvancedSearch" [hidden]="activateHiddenFormAdvancedSearch">
+                <register-client [whatIs]="isAConsult" 
+                (responseEmitter)="actionDesactivateHiddenFormAdvancedSearch($event)"></register-client>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <label class="lbClients"> Clients </label>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th class="thItem"> Shared Key </th>
+                <th class="thItem"> Business Id </th>
+                <th class="thItem"> Email </th>
+                <th class="thItem"> Phone </th>
+                <th class="thItem"> Data Added </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of clients">
+                <td class="tdItem">
+                    {{ client.businessId }}
+                </td>
+                <td class="tdItem">
+                    {{ client.businessId }}
+                </td>
+                <td class="tdItem">
+                    {{ client.email }}
+                </td>
+                <td class="tdItem">
+                    {{ client.phone }}
+                </td>
+                <td class="tdItem">
+                    {{ client.startDate }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

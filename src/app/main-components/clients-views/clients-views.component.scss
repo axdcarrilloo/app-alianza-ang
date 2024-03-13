@@ -1,0 +1,71 @@
+
+$colorBackground: #b3cfdc;
+$colorFirstBlueLogo: #2091ca;
+
+.container-fluid {
+    width: 50%;
+    height: 40px;
+    margin-left: 200px;
+
+    .divFormColunm {
+        display: flex;
+
+        .btn-search {
+            margin-left: -10px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .btn-search:hover {
+            background-color: $colorBackground;
+            transition: 0.7s;
+        }
+    
+        .divAdvancedSearch {
+            width: 180px;
+            color: white;
+    
+            .btnAdvancedSearch {
+                width: 180px;
+                border-radius: 10px;
+                background-color: $colorFirstBlueLogo;
+                font-weight: bold;
+                height: 35px;
+                margin-left: 25px;
+    
+            }
+    
+            .divHiddenFormAdvancedSearch {
+                width: 300px;
+                display: block;
+            }
+        }
+    }
+
+    .lbClients {
+        color: $colorFirstBlueLogo;
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .table {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: $colorBackground;
+        
+        th {
+            background-color: $colorBackground;
+        }
+    
+        .thItem {
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+        }
+    
+        .tdItem {
+            background-color: $colorBackground;
+            font-size: 15px;
+        }
+    }    
+}

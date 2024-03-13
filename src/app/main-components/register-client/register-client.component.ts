@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -9,7 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterClientComponent implements OnInit {
 
   clientForm!: FormGroup;
-  formRegisterClientHidden:Boolean = true;
+  @Input()whatIs: string = "Register";
+  @Output()responseEmitter: EventEmitter<Boolean> = new EventEmitter<Boolean>();
 
   ngOnInit(): void {
     this.clientForm = this.loadFormRegisterClient();
@@ -17,29 +18,25 @@ export class RegisterClientComponent implements OnInit {
 
   constructor(private fb:FormBuilder) {}
 
-  register(): void {
-    let clientRegister = this.clientForm.value;
-    console.log(clientRegister);
-    this.actionTrueHiddenFormRegisterClient();
-    this.clientForm.reset();
-  }
-
   loadFormRegisterClient(): FormGroup {
     return this.fb.group({
-      sharedKey: ['',  [Validators.required]],
       businessId: ['',  [Validators.required]],
-      email: ['',  [Validators.required, Validators.email]],
       phone: ['',  [Validators.required]],
-      dataAdded: ['',  [Validators.required]],
+      email: ['',  [Validators.required, Validators.email]],
+      startDate: ['',  [Validators.required]],
+      endDate: ['',  [Validators.required]],
     });
   }
 
-  actionTrueHiddenFormRegisterClient(): void {
-    this.formRegisterClientHidden = true;
-  }
-
-  actionFalseHiddenFormRegisterClient(): void {
-    this.formRegisterClientHidden = false;
+  register(): void {
+    let clientRegister = this.clientForm.value;
+    if(this.whatIs == 'Register') {
+      console.log(clientRegister);
+    } else {
+      console.log('This is a avanced search')
+      this.responseEmitter.emit(true);
+    }
+    this.clientForm.reset();
   }
 
 }
