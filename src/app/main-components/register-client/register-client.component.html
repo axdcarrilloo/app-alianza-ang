@@ -1,0 +1,23 @@
+<a class="navbar-brand" (click)="actionFalseHiddenFormRegisterClient()">
+    <img src="./../../../assets/icons/btn-new.png" class="btns">
+</a>
+<a class="navbar-brand" href="">
+    <img src="./../../../assets/icons/btn-export.png" class="btns">
+</a>
+<div [hidden]="formRegisterClientHidden">
+    <form id="formRegistrar" [formGroup]="clientForm" (ngSubmit)="register()">
+        <div class="mb-2">
+            <input type="text" formControlName="sharedKey" class="form-control" placeholder="Shared Key">
+        </div> 
+        <div class="mb-2">
+            <input type="text" formControlName="businessId" class="form-control" placeholder="Business Id">
+        </div>
+        <div class="mb-2">
+            <input type="email" formControlName="email" class="form-control" placeholder="Email">
+        </div> 
+        <div class="mb-2">
+            <input type="number" formControlName="phone" class="form-control" placeholder="Phone">
+        </div>
+        <button type="submit" class="btn btnRegistrar"> Registrar </button>
+    </form>
+</div>

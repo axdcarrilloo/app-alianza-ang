@@ -1,0 +1,24 @@
+$colorFirstBlueLogo: #2091ca;
+
+.btns {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#formRegistrar {
+    border: 4px solid $colorFirstBlueLogo;
+    width: 200px;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 15px;
+
+    .btnRegistrar {
+        margin-top: 5px;
+        background-color: $colorFirstBlueLogo;
+        font-weight: bold;
+    }
+    .btnRegistrar:hover {
+        transition: 0.9s;
+        background-color: blue;
+    }
+}

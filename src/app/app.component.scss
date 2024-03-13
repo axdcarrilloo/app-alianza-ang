@@ -1,0 +1,16 @@
+.divContainer {
+    width: 100%;
+    display: flex;
+
+    .divMenu {
+        width: 220px;
+        height: 100vh;
+        flex: 0;
+        border-right: 2px solid #d4d55d;
+    }
+    
+    .divBody {
+        flex: auto;
+        margin-top: 150px;
+    }
+}

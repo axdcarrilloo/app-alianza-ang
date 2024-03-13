@@ -1,0 +1,22 @@
+.navbar {
+    width: 13%;
+    margin-left: 1px;
+
+    .imgLogo{
+        height: 80px;
+        width: 160px;
+    }
+
+    .nav-link {
+        color:  #2091ca;
+        font-weight: bold;
+        margin-left: 70px;
+        cursor: pointer;
+    }
+
+    .nav-link:hover {
+        color: blue;
+        font-size: 25px;
+        transition: 0.9s;
+    }
+}
