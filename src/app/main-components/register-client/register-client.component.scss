@@ -31,9 +31,12 @@ $colorBackground: #b3cfdc;
         font-weight: bold;
 
     }
-
     .btnRegister:hover {
         transition: 0.9s;
         background-color: blue;
+    }
+
+    .lbErrorAdvancedSearch {
+        color: red;
     }
 }

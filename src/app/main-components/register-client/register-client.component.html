@@ -3,7 +3,7 @@
     <div class="mb-2">
         <div class="divAling">
             <label for="inputBusinessId"> Name </label>
-            <input type="text" formControlName="businessId" class="form-control">
+            <input type="text" formControlName="businessId" class="form-control" required>
         </div>
     </div>
     <div class="mb-2">
@@ -34,4 +34,5 @@
     <div class="divRegister">
         <button type="submit" class="btn btnRegister"> Ok </button>
     </div>
+    <label class="lbErrorAdvancedSearch" [hidden]="hiddenErrorAdvancedSearch">Llenar todos los campos</label>
 </form>

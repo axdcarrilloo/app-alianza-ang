@@ -2,10 +2,11 @@
     <div class="divFormColunm">
         <div>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="text" placeholder="Enter Shared Key"
-                    [(ngModel)]="sharedKeySearch" [ngModelOptions]="{standalone: true}">
+                <input [class]="cssInputSharedKey" type="text" placeholder="Enter Shared Key"
+                    [(ngModel)]="sharedKeySearch" [ngModelOptions]="{standalone: true}" (keydown)="countCaracteresSharedKey($event)">
                 <button class="btn-search" type="button" (click)="searchSharedKey()">Search</button>
             </form>
+            <label class="lbErrorSharedKey" [hidden]="hiddenErrorSharedKey">Debe ser mayor a 4 caracteres</label>
         </div>
 
         <div class="divAdvancedSearch">
@@ -34,7 +35,7 @@
         <tbody>
             <tr *ngFor="let client of clients">
                 <td class="tdItem">
-                    {{ client.businessId }}
+                    {{ client.sharedKey }}
                 </td>
                 <td class="tdItem">
                     {{ client.businessId }}

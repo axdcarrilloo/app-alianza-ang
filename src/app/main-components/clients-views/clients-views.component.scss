@@ -10,6 +10,14 @@ $colorFirstBlueLogo: #2091ca;
     .divFormColunm {
         display: flex;
 
+        .inputError {
+            border: 3px solid red;
+        }
+
+        .lbErrorSharedKey {
+            color: red;
+        }
+
         .btn-search {
             margin-left: -10px;
             border-radius: 10px;
